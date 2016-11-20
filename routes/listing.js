@@ -1,7 +1,7 @@
 var express = require('express');
 var Listing = require('../models/listing');
 var router = express.Router();
-var coors = require('coors');
+var coors = require('cors');
 
 /* GET home page. */
 router.post('/', coors(), function(req, res, next) {
