@@ -16,6 +16,7 @@ router.post('/', coors(), function(req, res, next) {
     pets: req.params.pets,
     furnished: req.params.furnished
   }
+  console.log(newListing);
   Listing.create(newListing, function(err, listing) {
     if (err) res.send(err);
     res.json(listing);
