@@ -1,9 +1,9 @@
 {
-  "name": "homeme-api",
+  "name": "ajax-express",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "server.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
