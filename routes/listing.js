@@ -6,15 +6,15 @@ var coors = require('cors');
 /* GET home page. */
 router.post('/', coors(), function(req, res, next) {
   var newListing = {
-    city: req.params.body.city,
-    address: req.params.body.address,
-    zipcode: req.params.body.zipcode,
-    price: req.params.body.price,
-    bedrooms: req.params.body.bedrooms,
-    bathrooms: req.params.body.bathrooms,
-    duration: req.params.body.duration,
-    pets: req.params.body.pets,
-    furnished: req.params.body.furnished
+    city: req.body.city,
+    address: req.body.address,
+    zipcode: req.body.zipcode,
+    price: req.body.price,
+    bedrooms: req.body.bedrooms,
+    bathrooms: req.body.bathrooms,
+    duration: req.body.duration,
+    pets: req.body.pets,
+    furnished: req.body.furnished
   }
   console.log(newListing);
   Listing.create(newListing, function(err, listing) {
