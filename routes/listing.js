@@ -1,10 +1,10 @@
 var express = require('express');
 var Listing = require('../models/listing');
 var router = express.Router();
-var coors = require('cors');
+var cors = require('cors');
 
 /* GET home page. */
-router.post('/', coors(), function(req, res, next) {
+router.post('/', cors(), function(req, res, next) {
   var newListing = {
     city: req.body.city,
     address: req.body.address,
