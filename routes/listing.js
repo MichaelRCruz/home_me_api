@@ -1,9 +1,10 @@
 var express = require('express');
 var Listing = require('../models/listing');
 var router = express.Router();
+var coors = require('coors');
 
 /* GET home page. */
-router.post('/', function(req, res, next) {
+router.post('/', coors(), function(req, res, next) {
   var newListing = {
     city: req.params.city,
     address: req.params.address,
