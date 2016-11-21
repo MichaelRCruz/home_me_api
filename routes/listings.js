@@ -13,7 +13,7 @@ var options = {
 
 var geocoder = NodeGeocoder(options);
 
-router.get('/', function(req, res, next) {
+router.get('/', cors(), function(req, res, next) {
   if (req.query.id) {
     Listing.findOne({'_id': req.query.id}, function(err, listing) {
       if (err) res.send(err);
