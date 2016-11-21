@@ -34,6 +34,7 @@ router.delete('/', cors(), function(req, res, next) {
   var id = { "_id": req.body.id }
   Listing.find(id).remove(function(err) {
     if (err) console.log(err);
+    res.send(204);
   })
 })
 
