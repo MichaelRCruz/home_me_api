@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var listingSchema = new mongoose.Schema({
   city: String,
+  state: String,
   address: String,
   zipcode: String,
   price: Number,

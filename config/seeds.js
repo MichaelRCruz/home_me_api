@@ -4,6 +4,7 @@ var Listing = require('../models/listing');
 var listings = [
   { // 0
     city: "Los Angeles",
+    state: 'CA',
     address: "1450 Barry Ave Apt 4",
     zipcode: "90025",
     price: 1895,
@@ -15,6 +16,7 @@ var listings = [
   },
   { // 1
     city: "Los Angeles",
+    state: 'CA',
     address: "1312 Barry Ave Apt 4",
     zipcode: "90025",
     price: 1895,
@@ -26,6 +28,7 @@ var listings = [
   },
   { // 2
     city: "Los Angeles",
+    state: 'CA',
     address: "1100 Barry Ave Apt 4",
     zipcode: "90025",
     price: 1895,
@@ -37,6 +40,7 @@ var listings = [
   },
   { // 3
     city: "Los Angeles",
+    state: 'CA',
     address: "9000 Barry Ave Apt 4",
     zipcode: "90025",
     price: 1895,
@@ -48,6 +52,7 @@ var listings = [
   },
   { // 4
     city: "Los Angeles",
+    state: 'CA',
     address: "1600 Barry Ave Apt 4",
     zipcode: "90025",
     price: 1895,
