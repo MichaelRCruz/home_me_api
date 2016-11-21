@@ -40,8 +40,8 @@ router.post('/', cors(), function(req, res, next) {
     Listing.create(newListing, function(err, listing) {
       if (err) res.send(err);
       var firstListing = data[0];
-      listing.lat = firstListing.latitude;
-      listing.long = firstListing.longitude;
+      listing['lat'] = firstListing['latitude'];
+      listing['long'] = firstListing['longitude'];
       res.json(listing);
     })
   })
