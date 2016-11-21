@@ -13,13 +13,28 @@ var options = {
 
 var geocoder = NodeGeocoder(options);
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  Listing.find({}, function(err, listings) {
-    if (err) res.send(err);
-    res.json(listings);
-  });
+  if (req.query.id) {
+    Listing.findOne({'_id': req.query.id}, function(err, listing) {
+      if (err) res.send(err);
+      res.json(listing);
+    });
+  } else {
+    Listing.find({}, function(err, listings) {
+      if (err) res.send(err);
+      res.json(listings);
+    });
+  }
 });
+
+
+/* GET home page. */
+// router.get('/', function(req, res, next) {
+//   Listing.find({}, function(err, listings) {
+//     if (err) res.send(err);
+//     res.json(listings);
+//   });
+// });
 
 router.post('/', cors(), function(req, res, next) {
   var newListing = {
