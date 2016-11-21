@@ -30,5 +30,11 @@ router.post('/', cors(), function(req, res, next) {
   });
 });
 
+router.delete('/', cors(), function(req, res, next) {
+  var id = { id: req.body.id }
+  Listing.find(id).remove(function(err) {
+    if (err) console.log(err);
+  })
+})
 
 module.exports = router;
