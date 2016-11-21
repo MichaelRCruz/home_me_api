@@ -34,14 +34,24 @@ router.post('/', cors(), function(req, res, next) {
     pets: req.body.pets,
     furnished: req.body.furnished
   }
-  // geocoder.geocode('1450 Barry Ave, Los Angeles, CA')
   geocoder.geocode(newListing.address + ", " + newListing.city + ", " + newListing.state + " " + newListing.zipcode)
   .then(function(data) {
+    var firstListing = data[0];
+    newListing.formattedAddress = firstListing.formattedAddress;
+    newListing.latitude = firstListing.latitude;
+    newListing.longitude = firstListing.longitude;
+    newListing.googlePlaceId = firstListing.extra.googlePlaceId;
+    newListing.neighborhood = firstListing.extra.neighborhood;
+    newListing.streetNumber = firstListing.streetNumber;
+    newListing.streetName = firstListing.streetName;
+    newListing.city = firstListing.city;
+    newListing.country = firstListing.country;
+    newListing.countryCode = firstListing.countryCode;
+    newListing.zipcode = firstListing.zipcode;
+    newListing.provider = firstListing.provider;
+    console.log(newListing);
     Listing.create(newListing, function(err, listing) {
       if (err) res.send(err);
-      var firstListing = data[0];
-      listing['lat'] = firstListing['latitude'];
-      listing['long'] = firstListing['longitude'];
       res.json(listing);
     })
   })
